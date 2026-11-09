@@ -1,0 +1,9 @@
+node_modules
+.next
+data/raw
+.env*.local
+next-env.d.ts
+*.tsbuildinfo
+.impeccable/hook.cache.json
+.next-check
+.DS_Store
