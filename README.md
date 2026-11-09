@@ -95,10 +95,10 @@ npm run dev            # http://localhost:3100
 
 Either way the model only chooses tools and words. Every number (lot size, cottage size, cost, rent, citywide counts) comes from the TypeScript rules engine.
 
-**Deploy (Google Cloud Run).** Live at https://plottwist-mae3p7k6mq-uk.a.run.app (project `project-c6b676c2-2675-48f3-9b3`, region `us-east4`). The Gemini key lives in Secret Manager as `gemini-api-key`; `.gcloudignore` keeps `.env.local` and raw data out of the upload. To ship a change, from `plottwist/`:
+**Deploy (Google Cloud Run).** Live at https://myrealestateagent-mae3p7k6mq-uk.a.run.app (project `project-c6b676c2-2675-48f3-9b3`, region `us-east4`). The Gemini key lives in Secret Manager as `gemini-api-key`; `.gcloudignore` keeps `.env.local` and raw data out of the upload. To ship a change, from `plottwist/`:
 
 ```bash
-gcloud run deploy plottwist --source . --region us-east4 --allow-unauthenticated --set-secrets GEMINI_API_KEY=gemini-api-key:latest --memory 1Gi
+gcloud run deploy myrealestateagent --source . --region us-east4 --allow-unauthenticated --set-secrets GEMINI_API_KEY=gemini-api-key:latest --memory 1Gi
 ```
 
 Cloud Run builds the Next.js app with Google's buildpacks (`npm start` honours `$PORT`). The data in `public/data/` ships with the app, so the site needs no database. On a new project the build's service account needs `roles/run.builder` once.
