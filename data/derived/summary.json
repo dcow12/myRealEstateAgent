@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "generatedAt": "2026-11-06T09:15:25.610Z",
+    "place": "City of College Park, Maryland",
+    "origin": {
+      "lon": -76.93329030932996,
+      "lat": 38.99456971850006,
+      "ftPerDegLat": 364000,
+      "ftPerDegLon": 282903
+    },
+    "counts": {
+      "parcels": 9242,
+      "accounts": 5877,
+      "singleFamily": 4350,
+      "buildings": 8864,
+      "estimatedHouses": 13,
+      "roads": 4411
+    },
+    "stats": {
+      "homes": 4350,
+      "yes": 3746,
+      "maybe": 106,
+      "no": 404,
+      "review": 94,
+      "newHomeSqft": 2847610,
+      "byBlocker": {
+        "no-data": 11,
+        "backyard-room": 428,
+        "zone-not-modeled": 83,
+        "lot-coverage": 81,
+        "size-cap": 1
+      }
+    },
+    "relax": [
+      {
+        "key": "separation",
+        "label": "Allow a 3 ft gap from the main house (now 6 ft)",
+        "extraHomes": 107
+      },
+      {
+        "key": "setback",
+        "label": "Let cottages sit 3 ft from side/rear lines (now 5 ft)",
+        "extraHomes": 70
+      },
+      {
+        "key": "coverage",
+        "label": "Add 10 points to the lot-coverage limit",
+        "extraHomes": 63
+      },
+      {
+        "key": "cap",
+        "label": "Raise the local size cap to 1,200 sq ft",
+        "extraHomes": 0
+      }
+    ],
+    "zoneCounts": {
+      "RSF65": 4236,
+      "RR": 29,
+      "RMF20": 39,
+      "NAC": 19,
+      "RTOLE": 8,
+      "AG": 7,
+      "RSF95": 2,
+      "CN": 3,
+      "LTOE": 4,
+      "IH": 2,
+      "CGO": 1
+    },
+    "scanCounts": {
+      "ok": 4314,
+      "no-building": 23,
+      "estimated": 13
+    },
+    "sources": [
+      "Prince George's County GIS: Property_Flattened parcels and municipal boundary (gis.princegeorgescountymd.gov)",
+      "OpenStreetMap contributors via Overpass API: building footprints/heights and streets (ODbL)",
+      "PG County Zoning Ordinance Sec. 27-4202 dimensional standards; accessory structure rules (enCodePlus)",
+      "Maryland HB 1466 / SB 891 (2025), Ch. 196",
+      "HUD FY2026 Washington-Arlington-Alexandria income limits and Fair Market Rents"
+    ]
+  }
+}
