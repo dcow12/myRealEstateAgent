@@ -1,0 +1,11 @@
+# Files never uploaded to Cloud Build. Secrets stay local; the Gemini key comes from Secret Manager.
+.gcloudignore
+.env*.local
+.env.local
+node_modules/
+.next/
+.next-check/
+data/raw/
+prototype/
+.impeccable/
+*.tsbuildinfo
