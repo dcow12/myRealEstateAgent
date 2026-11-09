@@ -7,7 +7,7 @@ import { existsSync } from 'node:fs';
 
 const RAW = new URL('../data/raw/', import.meta.url);
 const COUNTY = 'https://gis.princegeorgescountymd.gov/arcgis/rest/services';
-const UA = 'plottwist-hackathon/0.1 (housing research prototype)';
+const UA = 'myrealestateagent-hackathon/0.1 (housing research prototype)';
 
 const PARCEL_FIELDS = [
   'OBJECTID', 'ACCOUNT', 'LAND_AREA_SQFT', 'HOUSE_NUMBER', 'HOUSE_SUFFIX', 'STREET_NAME', 'STREET_TYPE', 'STREET_DIRECTION',

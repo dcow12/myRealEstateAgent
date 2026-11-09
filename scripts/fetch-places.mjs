@@ -6,7 +6,7 @@
 // Run after `npm run analyze`: `npm run fetch-places`.
 import { readFile, writeFile } from 'node:fs/promises';
 
-const UA = 'plottwist-hackathon/0.1 (housing research prototype)';
+const UA = 'myrealestateagent-hackathon/0.1 (housing research prototype)';
 const town = JSON.parse(await readFile(new URL('../public/data/town.json', import.meta.url), 'utf8'));
 const { lon: lon0, lat: lat0, ftPerDegLat, ftPerDegLon } = town.meta.origin;
 const toLocal = (lon, lat) => [Math.round((lon - lon0) * ftPerDegLon), Math.round((lat - lat0) * ftPerDegLat)];

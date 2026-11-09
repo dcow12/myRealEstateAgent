@@ -1,4 +1,4 @@
-// Runs the PlotTwist site scan + rules engine on every single-family home in College Park.
+// Runs the myRealEstateAgent site scan + rules engine on every single-family home in College Park.
 // Input: data/raw (from fetch-data.mjs). Output: public/data/town.json (3D + agents) and data/derived/summary.json.
 // Run: node scripts/analyze.ts
 import { readFile, writeFile, mkdir } from 'node:fs/promises';

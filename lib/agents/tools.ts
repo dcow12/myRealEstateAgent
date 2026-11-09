@@ -67,7 +67,7 @@ export function homeReport(lotIndex: number, policy?: Partial<Policy>) {
   return {
     lotIndex,
     address: l.addr || '(no street address on record)',
-    zone: z ? `${z.code} (${z.label})` : `${l.zone} (not modeled: ADU rules for this zone are not in PlotTwist yet)`,
+    zone: z ? `${z.code} (${z.label})` : `${l.zone} (not modeled: ADU rules for this zone are not in myRealEstateAgent yet)`,
     lotSqft: l.lotSqft,
     platted_lots_merged: l.rings,
     livingSqft_county_record: l.livingSqft || 'unknown',
@@ -91,7 +91,7 @@ export function homeReport(lotIndex: number, policy?: Partial<Policy>) {
     flags: [
       l.historic ? 'In a historic district: exterior changes may need Historic Preservation review.' : null,
       l.scan === 'estimated' ? 'House outline is estimated, so the backyard numbers are rough.' : null,
-      'Local ADU size cap and the 6 ft house gap are PlotTwist assumptions until CB-074-2026 text is checked.',
+      'Local ADU size cap and the 6 ft house gap are myRealEstateAgent assumptions until CB-074-2026 text is checked.',
     ].filter(Boolean),
   };
 }
@@ -138,7 +138,7 @@ const BLOCKER_TEXT = {
   'lot-coverage': 'lot already near its coverage limit',
   'size-cap': 'size cap leaves too little room',
   'min-lot': 'lot smaller than the zone minimum',
-  'zone-not-modeled': 'zone not modeled by PlotTwist',
+  'zone-not-modeled': 'zone not modeled by myRealEstateAgent',
   'no-data': 'missing map data',
 } as const;
 

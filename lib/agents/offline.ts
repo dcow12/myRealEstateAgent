@@ -117,9 +117,9 @@ export function offlineReply(roleId: AgentId, req: AgentRequest): AgentResponse 
     const z = ZONES[lot.zone];
     const rules = use('explain_rules', { zone: lot.zone }, explainRules(lot.zone));
     void rules;
-    if (!z) return { reply: `This home is zoned ${lot.zone}, which PlotTwist doesn't model yet. Under Maryland's 2025 ADU law, an ADU can be at most 75% of the main house, but the county's rules for this zone need a direct check with DPIE.`, actions, tools, mode: 'offline' };
+    if (!z) return { reply: `This home is zoned ${lot.zone}, which myRealEstateAgent doesn't model yet. Under Maryland's 2025 ADU law, an ADU can be at most 75% of the main house, but the county's rules for this zone need a direct check with DPIE.`, actions, tools, mode: 'offline' };
     return {
-      reply: `This home is in ${z.code} (${z.label}). The county caps lot coverage at ${Math.round(z.maxCoverage * 100)}% and keeps accessory buildings out of the ${z.frontYardFt} ft front yard. A cottage can sit in the side or rear yard, stepping 1 ft back per foot over 10 ft tall, so a 15 ft cottage needs 5 ft. Maryland's 2025 ADU law (HB 1466) caps an ADU at 75% of the main house. The 6 ft gap from the house and the ${rep.policyUsed.maxAduSqft} sq ft local cap are PlotTwist assumptions until the county's new bill, CB-074-2026, is checked.` +
+      reply: `This home is in ${z.code} (${z.label}). The county caps lot coverage at ${Math.round(z.maxCoverage * 100)}% and keeps accessory buildings out of the ${z.frontYardFt} ft front yard. A cottage can sit in the side or rear yard, stepping 1 ft back per foot over 10 ft tall, so a 15 ft cottage needs 5 ft. Maryland's 2025 ADU law (HB 1466) caps an ADU at 75% of the main house. The 6 ft gap from the house and the ${rep.policyUsed.maxAduSqft} sq ft local cap are myRealEstateAgent assumptions until the county's new bill, CB-074-2026, is checked.` +
         (lot.historic ? ' This home is also in a historic district, so expect design review.' : ''),
       actions, tools, mode: 'offline',
     };

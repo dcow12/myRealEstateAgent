@@ -1,5 +1,5 @@
 ---
-name: PlotTwist
+name: myRealEstateAgent
 description: A planning workstation over a real 3D city, with ADU verdicts for every single-family lot in College Park, MD.
 colors:
   canvas: "#f6f6f7"
@@ -185,17 +185,17 @@ components:
     padding: "6px 8px"
 ---
 
-# Design System: PlotTwist
+# Design System: myRealEstateAgent
 
 ## Overview
 
 **Creative North Star: "The Planning Workstation"**
 
-PlotTwist is a docked, three-pane instrument over a real 3D city: a fact sidebar on the left, the map in the centre, an agent console on the right, all under a 48px bar. Surfaces are opaque, borders are 1px hairlines, elevation is nearly flat, and density is that of a production tool (13px body, 28px controls). The world is cool zinc neutrals with exactly one chromatic voice, cobalt, plus four muted verdict colours that appear only where they encode a verdict.
+myRealEstateAgent is a docked, three-pane instrument over a real 3D city: a fact sidebar on the left, the map in the centre, an agent console on the right, all under a 48px bar. Surfaces are opaque, borders are 1px hairlines, elevation is nearly flat, and density is that of a production tool (13px body, 28px controls). The world is cool zinc neutrals with exactly one chromatic voice, cobalt, plus four muted verdict colours that appear only where they encode a verdict.
 
 The system's claim is that code decides and the model only talks, so its signature is evidentiary: every agent answer carries a monospace tool-call trace that expands to the full arguments. Numbers are tabular, machine names are mono, and the map is a view rather than a decorative backdrop. The product record pins the register (Linear, Vercel, Stripe Dashboard, GitHub): no emojis, no glassmorphism, no promotional copy.
 
-Light and dark themes are equal citizens; the theme is set before paint from `localStorage['plottwist-theme']` so a dark reload never flashes light.
+Light and dark themes are equal citizens; the theme is set before paint from `localStorage['myrealestateagent-theme']` so a dark reload never flashes light.
 
 **Key Characteristics:**
 - Three docked panes (320px / fluid / 384px) under a 48px bar; no floating cards over the map except the legend and map tools.

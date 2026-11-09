@@ -1,4 +1,4 @@
-// PlotTwist rules engine. Pure functions. Code decides; agents only explain.
+// myRealEstateAgent rules engine. Pure functions. Code decides; agents only explain.
 // Runs in Node (scripts, API routes) and in the browser (3D what-if recoloring).
 
 export type ZoneRules = {

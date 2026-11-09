@@ -63,4 +63,4 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => console.log(`PlotTwist on http://localhost:${PORT} (AI explain: ${KEY ? MODEL : 'off, using template'})`));
+server.listen(PORT, () => console.log(`myRealEstateAgent on http://localhost:${PORT} (AI explain: ${KEY ? MODEL : 'off, using template'})`));

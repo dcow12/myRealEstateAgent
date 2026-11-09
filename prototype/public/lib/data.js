@@ -1,4 +1,4 @@
-// Reference data for the PlotTwist rules engine.
+// Reference data for the myRealEstateAgent rules engine.
 // Anything marked verified:false is a DEMO PLACEHOLDER, not a quote from the code.
 // Replace it with values from the adopted ordinance before showing it to a real homeowner.
 

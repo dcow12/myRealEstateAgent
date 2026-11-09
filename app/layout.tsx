@@ -7,13 +7,13 @@ const display = Bricolage_Grotesque({ subsets: ['latin'], axes: ['opsz', 'wdth']
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' });
 
 export const metadata: Metadata = {
-  title: 'PlotTwist',
+  title: 'myRealEstateAgent',
   description: 'ADU feasibility for every single-family lot in College Park, MD, with citywide rule what-ifs.',
 };
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#000000' };
 
 /** Dark by default; a saved choice wins. Runs before paint so a reload never flashes the wrong theme. */
-const THEME_INIT = `try{if(localStorage.getItem('plottwist-theme')==='light')document.documentElement.removeAttribute('data-theme')}catch{}`;
+const THEME_INIT = `try{if(localStorage.getItem('myrealestateagent-theme')==='light')document.documentElement.removeAttribute('data-theme')}catch{}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

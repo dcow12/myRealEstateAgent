@@ -5,7 +5,7 @@ import { TOOLS } from './tools.ts';
 import { appState, briefing } from './state.ts';
 import type { AgentAction, AgentRequest, AgentResponse, AgentId } from '../town/types.ts';
 
-const MODEL = process.env.CLAUDE_MODEL || process.env.PLOTTWIST_MODEL || 'claude-opus-5-5';
+const MODEL = process.env.CLAUDE_MODEL || process.env.MYREALESTATEAGENT_MODEL || process.env.PLOTTWIST_MODEL || 'claude-opus-5-5';
 const MAX_STEPS = 6;
 
 export const claudeKey = () => Boolean(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);

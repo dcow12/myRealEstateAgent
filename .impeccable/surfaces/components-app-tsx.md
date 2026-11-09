@@ -5,7 +5,7 @@ primary_target: "components/App.tsx"
 related_targets: ["components/TownScene.tsx","app/globals.css"]
 ---
 
-# Surface: PlotTwist main screen (components/App.tsx, components/TownScene.tsx)
+# Surface: myRealEstateAgent main screen (components/App.tsx, components/TownScene.tsx)
 
 Mode: Operate. Build path: code-led (Operate surface). Direction is brief-pinned by the user: production SaaS restraint in the class of Linear, Vercel, Stripe Dashboard, GitHub; Inter or Geist; neutral palette with one purposeful accent; no emojis, glass, gradients or promotional copy. concept-seed was not run because the brief pins the direction.
 

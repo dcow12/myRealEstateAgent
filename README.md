@@ -1,8 +1,8 @@
-# PlotTwist
+# myRealEstateAgent
 
 **Turn a homeowner's backyard into the next affordable home on the block.**
 
-PlotTwist is an AI agent that takes one street address and tells the homeowner, in plain language, whether they can legally build a small second home on their lot (an accessory dwelling unit, or ADU), what it would cost, how to pay for it, and what it would mean to rent it at a price a local teacher, nurse or grad student could afford.
+myRealEstateAgent is an AI agent that takes one street address and tells the homeowner, in plain language, whether they can legally build a small second home on their lot (an accessory dwelling unit, or ADU), what it would cost, how to pay for it, and what it would mean to rent it at a price a local teacher, nurse or grad student could afford.
 
 ---
 
@@ -41,7 +41,7 @@ The homeowner types an address. An agent runs a short, visible pipeline:
 
 ## The twist
 
-Most housing tools help people *find* housing. PlotTwist helps people *create* it, one lot at a time. Neighborhood mode also turns thousands of single-lot answers into evidence for zoning reform: "If the county relaxed the rear setback from 10 ft to 5 ft, 1,840 more lots in College Park could hold an ADU."
+Most housing tools help people *find* housing. myRealEstateAgent helps people *create* it, one lot at a time. Neighborhood mode also turns thousands of single-lot answers into evidence for zoning reform: "If the county relaxed the rear setback from 10 ft to 5 ft, 1,840 more lots in College Park could hold an ADU."
 
 ## Responsible AI
 
@@ -91,7 +91,7 @@ npm install
 npm run dev            # http://localhost:3100
 ```
 
-**Model.** Copy `.env.local.example` to `.env.local` and set `GEMINI_API_KEY` (a free key from Google AI Studio). The agents then write their answers with Gemini. They try `gemini-flash-lite-latest`, `gemini-3.5-flash`, `gemini-flash-latest` and `gemini-3.5-flash-lite` in that order, skipping any model that is busy, out of quota or slow; `GEMINI_MODEL` puts your pick first. Code runs each agent's usual tools before the model call (a `<briefing>`), so most answers take one model call, and a turn that passes 15 seconds answers with rules only. The free tier allows only a few requests per minute per model; turn on billing for the key before a live demo. `ANTHROPIC_API_KEY` works too (Claude, `CLAUDE_MODEL`). With both set, Gemini wins unless `PLOTTWIST_LLM=claude`. With no key, or if the API fails mid-demo, every agent falls back to rules-only templates over the same tools. The status pill in the top bar shows which mode is live.
+**Model.** Copy `.env.local.example` to `.env.local` and set `GEMINI_API_KEY` (a free key from Google AI Studio). The agents then write their answers with Gemini. They try `gemini-flash-lite-latest`, `gemini-3.5-flash`, `gemini-flash-latest` and `gemini-3.5-flash-lite` in that order, skipping any model that is busy, out of quota or slow; `GEMINI_MODEL` puts your pick first. Code runs each agent's usual tools before the model call (a `<briefing>`), so most answers take one model call, and a turn that passes 15 seconds answers with rules only. The free tier allows only a few requests per minute per model; turn on billing for the key before a live demo. `ANTHROPIC_API_KEY` works too (Claude, `CLAUDE_MODEL`). With both set, Gemini wins unless `MYREALESTATEAGENT_LLM=claude`. With no key, or if the API fails mid-demo, every agent falls back to rules-only templates over the same tools. The status pill in the top bar shows which mode is live.
 
 Either way the model only chooses tools and words. Every number (lot size, cottage size, cost, rent, citywide counts) comes from the TypeScript rules engine.
 

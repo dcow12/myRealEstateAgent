@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-11-07T16:35:14.242Z",
-  "title": "Design System: PlotTwist",
+  "title": "Design System: myRealEstateAgent",
   "extensions": {
     "colorMeta": {
       "canvas": {
@@ -679,7 +679,7 @@
     },
     "themes": {
       "selector": ":root[data-theme='dark']",
-      "init": "localStorage 'plottwist-theme' read before paint (app/layout.tsx)",
+      "init": "localStorage 'myrealestateagent-theme' read before paint (app/layout.tsx)",
       "cssVariables": "app/globals.css :root (light) and :root[data-theme=dark]"
     },
     "scenePalette": {
@@ -927,7 +927,7 @@
   ],
   "narrative": {
     "northStar": "The Planning Workstation",
-    "overview": "PlotTwist is a docked, three-pane instrument over a real 3D city: a fact sidebar on the left, the map in the centre, an agent console on the right, all under a 48px bar. Surfaces are opaque, borders are 1px hairlines, elevation is nearly flat, and density is that of a production tool (13px body, 28px controls). The world is cool zinc neutrals with exactly one chromatic voice, cobalt, plus four muted verdict colours that appear only where they encode a verdict.\n\nThe system's claim is that code decides and the model only talks, so its signature is evidentiary: every agent answer carries a monospace tool-call trace that expands to the full arguments. Numbers are tabular, machine names are mono, and the map is a view rather than a decorative backdrop. The product record pins the register (Linear, Vercel, Stripe Dashboard, GitHub): no emojis, no glassmorphism, no promotional copy.\n\nLight and dark themes are equal citizens; the theme is set before paint from `localStorage['plottwist-theme']` so a dark reload never flashes light.",
+    "overview": "myRealEstateAgent is a docked, three-pane instrument over a real 3D city: a fact sidebar on the left, the map in the centre, an agent console on the right, all under a 48px bar. Surfaces are opaque, borders are 1px hairlines, elevation is nearly flat, and density is that of a production tool (13px body, 28px controls). The world is cool zinc neutrals with exactly one chromatic voice, cobalt, plus four muted verdict colours that appear only where they encode a verdict.\n\nThe system's claim is that code decides and the model only talks, so its signature is evidentiary: every agent answer carries a monospace tool-call trace that expands to the full arguments. Numbers are tabular, machine names are mono, and the map is a view rather than a decorative backdrop. The product record pins the register (Linear, Vercel, Stripe Dashboard, GitHub): no emojis, no glassmorphism, no promotional copy.\n\nLight and dark themes are equal citizens; the theme is set before paint from `localStorage['myrealestateagent-theme']` so a dark reload never flashes light.",
     "keyCharacteristics": [
       "Three docked panes (320px / fluid / 384px) under a 48px bar; no floating cards over the map except the legend and map tools.",
       "Cool neutral ground, one accent (cobalt), verdict colours as state only.",

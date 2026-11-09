@@ -12,7 +12,7 @@ Inferred (the init question went unanswered; confirm or correct): primary users 
 
 ## Product Purpose
 
-PlotTwist scans every single-family lot in College Park against real county zoning geometry and Maryland's 2025 ADU law, and shows which lots could hold one more small home, how big, at what rough cost, and at what affordable rent. Planners test rule changes (setbacks, house gap, coverage, size cap, minimum lot) and see the citywide count change. Success: a user can find a lot, understand its verdict and limiting rule, and quantify what a rule change would unlock, in under a minute.
+myRealEstateAgent scans every single-family lot in College Park against real county zoning geometry and Maryland's 2025 ADU law, and shows which lots could hold one more small home, how big, at what rough cost, and at what affordable rent. Planners test rule changes (setbacks, house gap, coverage, size cap, minimum lot) and see the citywide count change. Success: a user can find a lot, understand its verdict and limiting rule, and quantify what a rule change would unlock, in under a minute.
 
 ## Positioning
 
@@ -37,7 +37,7 @@ Every number comes from deterministic code over real parcel and footprint data (
 
 ## Brand Commitments
 
-- Name: PlotTwist (kept).
+- Name: myRealEstateAgent (renamed from PlotTwist).
 - The user asked that the interface read as a mature, production-grade product (references named: Linear, Vercel, Stripe Dashboard, GitHub): no emojis, no glassmorphism, no promotional copy.
 
 ## Evidence on Hand

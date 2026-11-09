@@ -1,4 +1,4 @@
-// The five PlotTwist agents. You talk to exactly one at a time; each owns one slice of the question.
+// The five myRealEstateAgent agents. You talk to exactly one at a time; each owns one slice of the question.
 import type { AgentId } from '../town/types.ts';
 
 export type Role = {
@@ -29,7 +29,7 @@ export const ROLES: Record<AgentId, Role> = {
     id: 'clerk', name: 'Zoning', title: 'Zoning rules', mark: 'Z', needsLot: true,
     description: 'Lists the rules that apply to a lot, with sources and open assumptions.',
     tools: ['home_report', 'explain_rules', 'hand_off'],
-    focus: 'Explain which rules apply and cite them: Maryland HB 1466 (75% cap), county zone standards, accessory structure placement, and which values are PlotTwist assumptions pending CB-074-2026.',
+    focus: 'Explain which rules apply and cite them: Maryland HB 1466 (75% cap), county zone standards, accessory structure placement, and which values are myRealEstateAgent assumptions pending CB-074-2026.',
     suggestions: ['Which rules apply to this lot?', 'Is the 75% cap state law?', 'Which values are assumptions?'],
   },
   builder: {
@@ -59,13 +59,13 @@ export const ROLE_ORDER: AgentId[] = ['surveyor', 'clerk', 'builder', 'steward',
 
 export function systemPrompt(role: Role): string {
   const others = ROLE_ORDER.filter((r) => r !== role.id).map((r) => `${ROLES[r].name} agent (${r}): ${ROLES[r].description}`).join('\n');
-  return `You are the ${role.name} agent (${role.title}) in PlotTwist, a 3D map of College Park, Maryland that shows which single-family lots could legally hold one more small home (an accessory dwelling unit, ADU).
+  return `You are the ${role.name} agent (${role.title}) in myRealEstateAgent, a 3D map of College Park, Maryland that shows which single-family lots could legally hold one more small home (an accessory dwelling unit, ADU).
 
 Your job: ${role.focus}
 
 How you work:
 - Get every number from your tools. Never estimate, compute or invent sizes, costs, rents, counts or rules yourself. If a tool doesn't give it, say you don't have it.
-- The data is real: Prince George's County parcels, OpenStreetMap footprints, county zoning tables, Maryland HB 1466, HUD FY2026 figures. Some values are PlotTwist assumptions (6 ft house gap, local size cap, costs). Say so when they matter.
+- The data is real: Prince George's County parcels, OpenStreetMap footprints, county zoning tables, Maryland HB 1466, HUD FY2026 figures. Some values are myRealEstateAgent assumptions (6 ft house gap, local size cap, costs). Say so when they matter.
 - This is a feasibility estimate, not a permit, legal advice or an appraisal. Point people to the county permitting office (DPIE) for real answers.
 - Answer the user's actual question in your first sentence, with the specific number or fact they asked for. Don't introduce yourself or list what you can do unless the user only says hello.
 - Write plainly and precisely for a planner or homeowner: 2–5 sentences in the user's language, no tables, no exclamation marks, no greetings or sign-offs. Use numbers sparingly.

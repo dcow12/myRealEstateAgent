@@ -39,8 +39,8 @@ const VERDICT_LINE: Record<Verdict, string> = {
 };
 const MODE_LABEL: Record<AgentMode, string> = { gemini: 'Gemini', claude: 'Claude', offline: 'Rules only' };
 const MODE_TITLE: Record<AgentMode, string> = {
-  gemini: 'Agents write answers with Gemini. Every figure comes from PlotTwist tools.',
-  claude: 'Agents write answers with Claude. Every figure comes from PlotTwist tools.',
+  gemini: 'Agents write answers with Gemini. Every figure comes from myRealEstateAgent tools.',
+  claude: 'Agents write answers with Claude. Every figure comes from myRealEstateAgent tools.',
   offline: 'No model key configured. Agents answer from rules-engine templates.',
 };
 
@@ -53,13 +53,13 @@ const Mark = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
-/** "Plot" + boxed "Twist": letters rise through a baseline mask and dip like piano keys on hover. */
+/** "myRealEstate" + boxed "Agent": letters rise through a baseline mask and dip like piano keys on hover. */
 function Wordmark() {
   let n = 0;
   return (
-    <span className="wm" aria-label="PlotTwist" role="img">
-      {(['Plot', 'Twist'] as const).map((w) => (
-        <span key={w} className={`wm-word${w === 'Twist' ? ' boxed' : ''}`} aria-hidden>
+    <span className="wm" aria-label="myRealEstateAgent" role="img">
+      {(['myRealEstate', 'Agent'] as const).map((w) => (
+        <span key={w} className={`wm-word${w === 'Agent' ? ' boxed' : ''}`} aria-hidden>
           {Array.from(w).map((ch, i) => <span key={i} className="ltr" style={{ '--i': n++ } as CSSProperties}><span className="ltr-in">{ch}</span></span>)}
         </span>
       ))}
@@ -118,7 +118,7 @@ export default function App() {
     setDark((d) => {
       const next = !d;
       if (next) root.dataset.theme = 'dark'; else root.removeAttribute('data-theme');
-      try { localStorage.setItem('plottwist-theme', next ? 'dark' : 'light'); } catch {}
+      try { localStorage.setItem('myrealestateagent-theme', next ? 'dark' : 'light'); } catch {}
       return next;
     });
     window.setTimeout(() => root.classList.remove('theming'), 300);

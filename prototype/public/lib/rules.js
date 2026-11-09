@@ -1,4 +1,4 @@
-// PlotTwist rules engine. Pure functions, no AI: the code decides, the model only explains.
+// myRealEstateAgent rules engine. Pure functions, no AI: the code decides, the model only explains.
 import { STATE_RULES, ZONES, MIN_UNIT_SQFT, COSTS, RENT_DATA } from './data.js';
 
 const round = (n, step = 1) => Math.round(n / step) * step;
