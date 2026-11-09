@@ -1,0 +1,40 @@
+{
+  "name": "plottwist",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "PlotTwist: walk a 3D College Park, talk to one housing agent at a time, and see which real lots can hold one more home.",
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p ${PORT:-3100}",
+    "fetch-data": "node scripts/fetch-data.mjs",
+    "analyze": "node scripts/analyze.ts",
+    "fetch-places": "node scripts/fetch-places.mjs",
+    "mailing": "node scripts/mailing.mjs",
+    "test": "node --test lib/engine/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.6.0",
+    "@google/genai": "^3.0.0",
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "lucide-react": "^1.70.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.39",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0",
+    "typescript": "5.9.3"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  }
+}
