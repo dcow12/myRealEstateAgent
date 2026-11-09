@@ -1,0 +1,12 @@
+{
+  "name": "plottwist",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Find room for one more home: ADU feasibility for homeowners and planners.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/"
+  },
+  "license": "Apache-2.0"
+}
