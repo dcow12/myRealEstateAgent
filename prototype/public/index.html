@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlotTwist</title>
+  <meta name="description" content="Find room for one more home: backyard-cottage (ADU) feasibility for homeowners and planners.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">⌂+</span>
+      <div>
+        <h1>PlotTwist</h1>
+        <p class="tag">Finding room for one more home, one lot at a time.</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button role="tab" id="tab-lot" aria-selected="true" aria-controls="view-lot">My lot</button>
+      <button role="tab" id="tab-hood" aria-selected="false" aria-controls="view-hood">Neighborhood</button>
+    </nav>
+  </header>
+
+  <div class="banner" role="note">
+    Prototype. Uses Maryland's 2025 ADU law (an ADU can be at most 75% of the main house) plus
+    <strong>demo placeholder</strong> county measurements. All lots shown are made up.
+  </div>
+
+  <main>
+    <section id="view-lot" role="tabpanel" aria-labelledby="tab-lot" class="grid">
+      <form id="lot-form" class="card" aria-label="Lot details">
+        <h2>Your lot</h2>
+        <label>Start from a sample
+          <select id="sample"></select>
+        </label>
+        <fieldset>
+          <legend>Zoning</legend>
+          <label>Zone <select name="zone"></select></label>
+        </fieldset>
+        <fieldset>
+          <legend>Lot (feet)</legend>
+          <div class="two">
+            <label>Width <input name="lotWidthFt" type="number" min="10" max="400" required></label>
+            <label>Depth <input name="lotDepthFt" type="number" min="10" max="600" required></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Main house</legend>
+          <div class="two">
+            <label>Width (ft) <input name="houseWidthFt" type="number" min="5" max="300" required></label>
+            <label>Depth (ft) <input name="houseDepthFt" type="number" min="5" max="300" required></label>
+            <label>Distance from street (ft) <input name="houseFrontSetbackFt" type="number" min="0" max="300" required></label>
+            <label>Living space (sq ft) <input name="primarySqft" type="number" min="100" max="20000" required></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>What else is on the lot</legend>
+          <div class="two">
+            <label>Sheds, decks (sq ft) <input name="otherStructuresSqft" type="number" min="0" max="5000"></label>
+            <label>Trees to keep (sq ft) <input name="obstructionSqft" type="number" min="0" max="5000"></label>
+          </div>
+          <label class="check"><input name="hasGarage" type="checkbox"> Detached garage</label>
+          <label class="indent">Garage size (sq ft) <input name="garageSqft" type="number" min="0" max="3000"></label>
+          <label class="check"><input name="hasBasement" type="checkbox"> Basement with outside access possible</label>
+          <label class="indent">Basement size (sq ft) <input name="basementSqft" type="number" min="0" max="5000"></label>
+        </fieldset>
+      </form>
+
+      <div class="stack">
+        <div class="card verdict" id="verdict" aria-live="polite"></div>
+        <div class="card">
+          <h2>Site plan</h2>
+          <div id="plan" class="plan"></div>
+          <p class="legend"><span class="sw house"></span>House <span class="sw setback"></span>Setbacks <span class="sw room"></span>Buildable room <span class="sw adu"></span>Possible cottage</p>
+        </div>
+        <div class="card">
+          <h2>Options</h2>
+          <div class="table-wrap"><table id="options"><thead><tr><th>Type</th><th>Fits?</th><th>Size</th><th>Limited by</th><th>Rough cost</th></tr></thead><tbody></tbody></table></div>
+        </div>
+        <div class="card">
+          <div class="row">
+            <h2>Lot report</h2>
+            <div class="controls">
+              <label>Rent level
+                <select id="ami">
+                  <option value="0.5">50% of area median</option>
+                  <option value="0.6">60% of area median</option>
+                  <option value="0.8">80% of area median</option>
+                </select>
+              </label>
+              <div class="seg" role="group" aria-label="Language">
+                <button type="button" data-lang="en" aria-pressed="true">English</button>
+                <button type="button" data-lang="es" aria-pressed="false">Español</button>
+              </div>
+            </div>
+          </div>
+          <div id="report" class="report"></div>
+          <p class="src" id="report-src"></p>
+          <button type="button" id="print" class="ghost">Print report</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-hood" role="tabpanel" aria-labelledby="tab-hood" class="grid" hidden>
+      <form class="card" id="policy" aria-label="Policy what-if">
+        <h2>Policy what-if</h2>
+        <p class="muted">Change one county rule and see how many more homes become possible across 64 made-up lots.</p>
+        <div id="sliders"></div>
+        <button type="button" id="reset" class="ghost">Reset to current rules</button>
+      </form>
+      <div class="stack">
+        <div class="card stats" id="hood-stats" aria-live="polite"></div>
+        <div class="card">
+          <h2>Which rule blocks the most homes?</h2>
+          <p class="muted">For each lot that doesn't work, we relax one rule at a time and count how many lots would then fit a home.</p>
+          <div id="unlocks"></div>
+        </div>
+        <div class="card">
+          <h2>Block map</h2>
+          <div id="hood-map" class="hood-map"></div>
+          <p class="legend"><span class="sw ok"></span>ADU-ready <span class="sw maybe"></span>Has space, too small <span class="sw no"></span>Blocked</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Sources: <a href="https://planning.maryland.gov/Pages/OurWork/PBP/ADUTF/ADU-FAQ-for-Local-Governments-HB-1466.aspx" target="_blank" rel="noopener">MD Planning, HB 1466 FAQ</a> ·
+    HUD FY2026 Washington-area income limits and Fair Market Rents.
+    Not a permit, legal advice or an appraisal.
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
